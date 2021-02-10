@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include "coin.h"
+#include <time.h>
 using namespace std;
 
 int main() {
+    srand(time(0));
     cout << "Welcome to Vinay's coin flip simulator.";
     cout << "Enter how many coins you would like to flip: ";
     int numFlips;
