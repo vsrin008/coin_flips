@@ -9,7 +9,7 @@ class FlippedCoin {
         FlippedCoin();
         int HeadsOrTails();
         int SetCoinNumber();
-        int GetCoinNumber();
+        int GetCoinValue();
     
     private:
         int zeroOrOne; //0 is tails 1 is heads

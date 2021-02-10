@@ -2,6 +2,12 @@
 #include <stdlib.h>
 
 FlippedCoin::FlippedCoin() {
-    HeadsOrTails = rand()%2;
+    zeroOrOne = rand()%2;
+
+}
+
+int FlippedCoin::GetCoinValue() {
+    return zeroOrOne;
+
 
 }

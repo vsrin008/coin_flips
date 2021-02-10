@@ -5,16 +5,34 @@ using namespace std;
 
 int main() {
     cout << "Welcome to Vinay's coin flip simulator.";
-    cout << "Enter how many coins you would like to flip: \n";
+    cout << "Enter how many coins you would like to flip: ";
     int numFlips;
     cin >> numFlips;
 
     vector<int> AllFlips(numFlips);
 
-    for (int i=0; i<AllFlips.size(); ++i) {
+    int numHeads = 0;
+    int numTails = 1;
+
+    for (int i=0; i<AllFlips.size()-1; ++i) {
         FlippedCoin coin;
-        AllFlips.at(i) = coin.GetCoinNumber();
+        AllFlips.at(i) = coin.GetCoinValue();
+        if (AllFlips.at(i) == 0) {
+            ++numTails;
+        }
+        else {
+            ++numHeads;
+        }
     }
+    double doubleNumHeads = numHeads;
+    double doubleNumTails = numTails;
+
+
+    double perHeads = doubleNumHeads / numFlips * 100;
+    double perTails = doubleNumTails / numFlips * 100;
+
+
+    printf("You flipped %d times. These are the results: \n Heads: %d (%f percent) \n Tails: %d (%f percent) \n", numFlips, numHeads, perHeads, numTails, perTails);
 
 
 return 0;
